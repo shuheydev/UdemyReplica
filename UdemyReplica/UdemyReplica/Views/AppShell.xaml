@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="UdemyReplica.Views.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:UdemyReplica.Views"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d">
+
+    <Tab Title="Featured">
+        <ShellContent>
+            <views:MainPage />
+        </ShellContent>
+    </Tab>
+    <Tab Title="Search">
+        <ShellContent>
+            <views:MainPage />
+        </ShellContent>
+    </Tab>
+    <Tab Title="My courses">
+        <ShellContent>
+            <views:MainPage />
+        </ShellContent>
+    </Tab>
+    <Tab Title="Wishlist">
+        <ShellContent>
+            <views:MainPage />
+        </ShellContent>
+    </Tab>
+    <Tab Title="Account">
+        <ShellContent>
+            <views:MainPage />
+        </ShellContent>
+    </Tab>
+</Shell>

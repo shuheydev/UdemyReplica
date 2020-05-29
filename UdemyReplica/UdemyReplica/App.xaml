@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="UdemyReplica.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="AppThemeColor">#ed5153</Color>
+            <Color x:Key="TabBackgroundColor">#292f3c</Color>
+            <Style x:Key="headerFrameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource AppThemeColor}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+            <Style x:Key="tabFrameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TabBackgroundColor}" />
+                <Setter Property="HeightRequest" Value="140" />
+                <Setter Property="VerticalOptions" Value="End" />
+            </Style>
+
+            <Style x:Key="tabImageStyle" TargetType="Image">
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="TranslationY" Value="3" />
+                <Setter Property="HeightRequest" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="tabLabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TranslationY" Value="-3" />
+            </Style>
+            <Style x:Key="headerLabelStyle" TargetType="Label">
+                <Setter Property="Margin" Value="20,24,0,0" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="{StaticResource AppThemeColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

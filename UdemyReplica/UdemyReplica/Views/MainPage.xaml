@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UdemyReplica.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:exts="clr-namespace:UdemyReplica.Extensions"
+    xmlns:fonts="clr-namespace:UdemyReplica.Resources.Fonts"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+    xmlns:rotator="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="sectionLabelStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="15,0,0,0" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="categoryButtonStyle" TargetType="button:SfButton">
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="BackgroundColor" Value="#f4f2f6" />
+                <Setter Property="TextColor" Value="#78797f" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="ShowIcon" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <StackLayout Spacing="0">
+            <ScrollView Scrolled="ScrollView_Scrolled" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightPink"
+                        HeightRequest="220">
+                        <rotator:SfRotator
+                            x:Name="rotator"
+                            BackgroundColor="LightGray"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <rotator:SfRotator.DataSource>
+                                <ListCollection:List x:TypeArguments="rotator:SfRotatorItem">
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Red" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Green" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Blue" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Yellow" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Aqua" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                    <rotator:SfRotatorItem>
+                                        <rotator:SfRotatorItem.ItemContent>
+                                            <Grid BackgroundColor="Chartreuse" />
+                                        </rotator:SfRotatorItem.ItemContent>
+                                    </rotator:SfRotatorItem>
+                                </ListCollection:List>
+                            </rotator:SfRotator.DataSource>
+                        </rotator:SfRotator>
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="Beige"
+                        HeightRequest="20" />
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightGreen"
+                        HeightRequest="180">
+                        <StackLayout>
+                            <Grid>
+                                <Label Style="{StaticResource sectionLabelStyle}" Text="Categories" />
+                                <Button
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    FontSize="Micro"
+                                    HeightRequest="25"
+                                    HorizontalOptions="End"
+                                    Text="See All"
+                                    TextColor="#4e525f"
+                                    VerticalOptions="Start" />
+                            </Grid>
+                            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+                                <StackLayout Margin="0,20,0,0">
+                                    <StackLayout Orientation="Horizontal">
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Development" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Business" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Office Productivity" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Design" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Marketing" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Health &amp; Fitness" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Teaching &amp; Academics" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="Finance &amp; Accounting" />
+                                        <button:SfButton
+                                            ImageSource="{exts:ImageResource UdemyReplica.Resources.Icons.Save_white_48dp.png}"
+                                            Style="{StaticResource categoryButtonStyle}"
+                                            Text="IT &amp; Software" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightBlue"
+                        HeightRequest="280">
+                        <StackLayout>
+                            <Label Style="{StaticResource sectionLabelStyle}" Text="Students are viewing" />
+                            <CollectionView>
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>item1</x:String>
+                                        <x:String>item2</x:String>
+                                        <x:String>item3</x:String>
+                                        <x:String>item4</x:String>
+                                        <x:String>item5</x:String>
+                                    </x:Array>
+                                </CollectionView.ItemsSource>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <StackLayout Margin="10,0,0,0">
+                                                <Grid>
+                                                    <Frame
+                                                        Padding="0"
+                                                        CornerRadius="5"
+                                                        IsClippedToBounds="True">
+                                                        <Image Aspect="AspectFill" Source="{exts:ImageResource UdemyReplica.Resources.SampleImages.photo_19.jpg}" />
+                                                    </Frame>
+                                                    <Label
+                                                        FontSize="Micro"
+                                                        LineBreakMode="TailTruncation"
+                                                        MaxLines="2"
+                                                        Text="{Binding .}" />
+                                                </Grid>
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <rating:SfRating x:Name="rating" ItemSize="5" />
+                                                    <Label FontSize="Micro" Text="4.5" />
+                                                    <Label FontSize="Micro" Text="(4,143)" />
+                                                </StackLayout>
+                                                <Label FontSize="Small" Text="\11,000" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightYellow"
+                        HeightRequest="270">
+                        <Label Style="{StaticResource sectionLabelStyle}" Text="Top courses in JavaScript" />
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightCyan"
+                        HeightRequest="280">
+                        <Label Style="{StaticResource sectionLabelStyle}" Text="Top courses in ASP.NET Core" />
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightCoral"
+                        HeightRequest="270">
+                        <Label Style="{StaticResource sectionLabelStyle}" Text="Because you viewed &quot;Learn to Code in Python..." />
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="LightSeaGreen"
+                        HeightRequest="280">
+                        <Label Style="{StaticResource sectionLabelStyle}" Text="Because you searched for xamarin" />
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+            <!--  Bottom Tab  -->
+            <Frame x:Name="frame_Tab" Style="{StaticResource tabFrameStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66*" />
+                            <RowDefinition Height="33*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Style="{StaticResource tabImageStyle}">
+                            <Image.Source>
+                                <FontImageSource FontFamily="icons_mainpage" Glyph="{x:Static fonts:Fonts_MainPage.StarEmpty}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Style="{StaticResource tabLabelStyle}"
+                            Text="Featured" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66*" />
+                            <RowDefinition Height="33*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Style="{StaticResource tabImageStyle}">
+                            <Image.Source>
+                                <FontImageSource FontFamily="icons_mainpage" Glyph="{x:Static fonts:Fonts_MainPage.Search}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Style="{StaticResource tabLabelStyle}"
+                            Text="Featured" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66*" />
+                            <RowDefinition Height="33*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Style="{StaticResource tabImageStyle}">
+                            <Image.Source>
+                                <FontImageSource FontFamily="icons_mainpage" Glyph="{x:Static fonts:Fonts_MainPage.PlayCircled2}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Style="{StaticResource tabLabelStyle}"
+                            Text="Featured" />
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66*" />
+                            <RowDefinition Height="33*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Style="{StaticResource tabImageStyle}">
+                            <Image.Source>
+                                <FontImageSource FontFamily="icons_mainpage" Glyph="{x:Static fonts:Fonts_MainPage.HeartEmpty}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Style="{StaticResource tabLabelStyle}"
+                            Text="Featured" />
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66*" />
+                            <RowDefinition Height="33*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Style="{StaticResource tabImageStyle}">
+                            <Image.Source>
+                                <FontImageSource FontFamily="icons_mainpage" Glyph="{x:Static fonts:Fonts_MainPage.User}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Style="{StaticResource tabLabelStyle}"
+                            Text="Featured" />
+                    </Grid>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <!--  Navigation Bar  -->
+        <Frame
+            x:Name="frame_Header"
+            Opacity="0"
+            Style="{StaticResource headerFrameStyle}">
+            <Label Style="{StaticResource headerLabelStyle}" Text="Navigation Bar" />
+        </Frame>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\icons_mainpage.ttf" />
+    <None Remove="Resources\Icons\Save_white_48dp.png" />
+    <None Remove="Resources\SampleImages\photo_19.jpg" />
+    <None Remove="Resources\SampleImages\photo_20.jpg" />
+    <None Remove="Resources\SampleImages\photo_21.jpg" />
+    <None Remove="Resources\SampleImages\photo_22.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\icons_mainpage.ttf" />
+    <EmbeddedResource Include="Resources\Icons\Save_white_48dp.png" />
+    <EmbeddedResource Include="Resources\SampleImages\photo_19.jpg" />
+    <EmbeddedResource Include="Resources\SampleImages\photo_20.jpg" />
+    <EmbeddedResource Include="Resources\SampleImages\photo_21.jpg" />
+    <EmbeddedResource Include="Resources\SampleImages\photo_22.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.43" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="18.1.0.43" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="18.1.0.43" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AppShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
